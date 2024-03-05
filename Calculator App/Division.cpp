@@ -1,7 +1,13 @@
+#include <iostream>
 #include "Division.h"
+
 using namespace std;
+
 float division(float input1, float input2) {
+	float answer;
 	cout << endl;
-	cout << input1 / input2;
+	answer = input1 / input2;
 	cout << endl;
+
+	return answer;
 }
