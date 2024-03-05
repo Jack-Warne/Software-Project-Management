@@ -1,0 +1,6 @@
+﻿  Division.cpp
+C:\Users\473017\source\repos\Software-Project-Management\Calculator App\Division.cpp(4,2): error C2065: 'cout': undeclared identifier
+C:\Users\473017\source\repos\Software-Project-Management\Calculator App\Division.cpp(4,10): error C2065: 'endl': undeclared identifier
+C:\Users\473017\source\repos\Software-Project-Management\Calculator App\Division.cpp(5,2): error C2065: 'cout': undeclared identifier
+C:\Users\473017\source\repos\Software-Project-Management\Calculator App\Division.cpp(6,2): error C2065: 'cout': undeclared identifier
+C:\Users\473017\source\repos\Software-Project-Management\Calculator App\Division.cpp(6,10): error C2065: 'endl': undeclared identifier
