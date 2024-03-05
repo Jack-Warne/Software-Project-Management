@@ -17,12 +17,19 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+	int accumulator = 0;
+	switch (key) {
+	default:
+		if (key >= 48 && key < 58) {
+			std::cout << key-48 << std::endl;
+			accumulator = accumulator * 10 + (key - 48);
+		}
+	}
+	
 }
 
 //--------------------------------------------------------------
