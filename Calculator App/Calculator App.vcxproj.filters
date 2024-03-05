@@ -23,6 +23,9 @@
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
 		</ClInclude>
+		<ClInclude Include="src\Multiplication.h">
+			<Filter>src</Filter>
+		</ClInclude>
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
 		</ClInclude>
