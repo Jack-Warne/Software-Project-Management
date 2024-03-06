@@ -22,6 +22,12 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
 	switch (key) {
+	case 8:
+	case 67:
+	case 99:
+		this->current_number_accumulator /= 10;	//	Remove the last digit
+		break;
+
 	default:
 		if (key >= 48 && key < 58) {
 			this->current_number_accumulator = this->current_number_accumulator * 10 + (key - 48);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
