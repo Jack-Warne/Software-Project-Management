@@ -22,6 +22,11 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
 	switch (key) {
+	case 77:
+	case 109:
+		this->current_number_accumulator *= -1;	//	Change the sign of the number in the accumulator
+		break;
+
 	case 8:
 	case 67:
 	case 99:
@@ -33,7 +38,7 @@ void ofApp::keyReleased(int key){
 			this->current_number_accumulator = this->current_number_accumulator * 10 + (key - 48);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
 		}
 	}
-	
+
 	this->update_screen();	//	Update the screen once everything is done
 }
 
