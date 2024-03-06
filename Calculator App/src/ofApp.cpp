@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+	this->current_number_accumulator = 0;
 }
 
 //--------------------------------------------------------------
@@ -21,19 +21,18 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-	int accumulator = 0;
 	switch (key) {
 	default:
 		if (key >= 48 && key < 58) {
-			std::cout << key-48 << std::endl;
-			accumulator = accumulator * 10 + (key - 48);
+			this->current_number_accumulator = this->current_number_accumulator * 10 + (key - 48);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
 		}
 	}
 	
+	this->update_screen();	//	Update the screen once everything is done
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
+void ofApp::mouseMoved(int x, int y){
 
 }
 
@@ -62,17 +61,9 @@ void ofApp::mouseExited(int x, int y){
 
 }
 
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-
+void ofApp::update_screen(){
+	std::cout << this->current_number_accumulator << std::endl;
 }
 
-//--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
 
-}
 
-//--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
-}
