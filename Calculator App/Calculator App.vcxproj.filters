@@ -13,10 +13,9 @@
     <ClCompile Include="src\ofApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Multiply.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Multiplication.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -30,7 +29,6 @@
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Multiplication.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

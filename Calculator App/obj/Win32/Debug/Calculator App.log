@@ -1,11 +1,4 @@
-﻿  Multiplication.cpp
-  Source.cpp
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(15,17): warning C4101: 'multiplication': unreferenced local variable (compiling source file Multiplication.cpp)
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(23,14): error C2065: 'multiplication': undeclared identifier (compiling source file Multiplication.cpp)
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(23,38): error C2065: 'num1': undeclared identifier (compiling source file Multiplication.cpp)
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(23,44): error C2065: 'num2': undeclared identifier (compiling source file Multiplication.cpp)
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(24,6): error C2143: syntax error: missing ';' before '<<' (compiling source file Multiplication.cpp)
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(24,6): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int (compiling source file Multiplication.cpp)
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(26,1): error C2059: syntax error: 'return' (compiling source file Multiplication.cpp)
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(27,1): error C2059: syntax error: '}' (compiling source file Multiplication.cpp)
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(27,1): error C2143: syntax error: missing ';' before '}' (compiling source file Multiplication.cpp)
+﻿  Multiply.cpp
+main.obj : error LNK2005: _main already defined in Multiply.obj
+     Creating library bin\Calculator App_debug.lib and object bin\Calculator App_debug.exp
+bin\Calculator App_debug.exe : fatal error LNK1169: one or more multiply defined symbols found

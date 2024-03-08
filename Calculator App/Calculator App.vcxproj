@@ -180,13 +180,11 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Multiplication.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Multiply.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Multiplication.h" />
     <ClInclude Include="src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>
