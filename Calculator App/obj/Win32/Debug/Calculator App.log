@@ -1,4 +1,4 @@
-﻿  Multiply.cpp
-main.obj : error LNK2005: _main already defined in Multiply.obj
+﻿  MuliplicationClass.cpp
+main.obj : error LNK2005: _main already defined in MuliplicationClass.obj
      Creating library bin\Calculator App_debug.lib and object bin\Calculator App_debug.exp
 bin\Calculator App_debug.exe : fatal error LNK1169: one or more multiply defined symbols found

@@ -13,9 +13,7 @@
     <ClCompile Include="src\ofApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Multiply.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
+    <ClCompile Include="MuliplicationClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -29,6 +27,7 @@
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="MuliplicationClass.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
