@@ -1,16 +1,17 @@
 #include "MuliplicationClass.h"
 #include <iostream>
+
 using namespace std;
 
 
 int main() {
     MuliplicationClass multiplier;
-    double num1, num2;
+    float num3, num4;
 
     cout << "Enter two numbers: ";
-    cin >> num1 >> num2;
+    cin >> num3 >> num4;
 
-    double product = multiplier.multiply(num1, num2);
+    float product = multiplier.multi(num3, num4);
     cout << "Product = " << product << endl;
 
     return 0;

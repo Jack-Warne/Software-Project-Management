@@ -2,8 +2,7 @@
 class MuliplicationClass
 {
 	public:
-        double multiply(double num1, double num2) {
+        float multi(float num1, float num2) {
             return num1 * num2;
         }
 };
-
