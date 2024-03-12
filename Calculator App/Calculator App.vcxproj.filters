@@ -13,10 +13,12 @@
     <ClCompile Include="src\ofApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="src\Subtraction.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Multiplication.cpp" />
+    <ClCompile Include="src\Addition.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -30,7 +32,12 @@
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Multiplication.h" />
+    <ClInclude Include="src\Subtraction.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Addition.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
