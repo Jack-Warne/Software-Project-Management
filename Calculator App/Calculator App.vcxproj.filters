@@ -7,6 +7,9 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Addition.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -16,7 +19,10 @@
     <ClCompile Include="src\Subtraction.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Addition.cpp">
+    <ClCompile Include="src\Division.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MultiplicationClass.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,13 +35,19 @@
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Addition.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Subtraction.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Addition.h">
+    <ClInclude Include="src\Division.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MultiplicationClass.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
