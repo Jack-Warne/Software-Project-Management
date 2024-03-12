@@ -1,0 +1,24 @@
+
+/.vs
+/.vs/*
+/.vs/Calculator App
+/bin
+/bin/*
+/obj
+/obj/*
+
+*.tlog
+*.exe
+*.dll
+*.obj
+*.o
+*.log
+*.ilk
+*.pdb
+*.lastbuildstate
+*.recipe
+*.sln
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.rc
