@@ -1,10 +1,9 @@
-﻿  Multiplication.cpp
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(15,17): warning C4101: 'multiplication': unreferenced local variable
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(23,14): error C2065: 'multiplication': undeclared identifier
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(23,38): error C2065: 'num1': undeclared identifier
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(23,44): error C2065: 'num2': undeclared identifier
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(24,6): error C2143: syntax error: missing ';' before '<<'
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(24,6): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(26,1): error C2059: syntax error: 'return'
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(27,1): error C2059: syntax error: '}'
-C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\Multiplication.h(27,1): error C2143: syntax error: missing ';' before '}'
+﻿  main.cpp
+  Calculator App.vcxproj -> C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\bin\Calculator App_debug.exe
+  
+  	                   2	C:\Users\goldi\Downloads\openFrameworks_vs\openFrameworks_vs\libs\fmod\lib\vs\Win32\
+  	  *EXTRA File 		 6018560	C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\bin\FreeImage.dll
+  
+  	                   1	C:\Users\goldi\Downloads\openFrameworks_vs\openFrameworks_vs\libs\FreeImage\lib\vs\Win32\
+  	  *EXTRA File 		 1544704	C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\bin\fmod.dll
+  	  *EXTRA File 		 1733120	C:\Users\goldi\source\repos\Software-Project-Management\Calculator App\bin\fmodL.dll
