@@ -20,3 +20,8 @@
 *.pdb
 *.lastbuildstate
 *.recipe
+*.sln
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.rc
