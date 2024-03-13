@@ -1,0 +1,4 @@
+*.vcxproj merge=ours
+*.vcxproj.filters merge=ours
+*.vcxproj.user merge=ours
+*.rc merge=ours

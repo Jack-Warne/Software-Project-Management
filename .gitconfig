@@ -1,0 +1,3 @@
+[merge "ours"]
+    name = "Always merge our changes"
+    driver = true
