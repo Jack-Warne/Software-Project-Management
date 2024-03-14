@@ -54,7 +54,6 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-
     <Import Project="../../../../../Downloads/openFrameworks_vs/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
@@ -68,7 +67,6 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="../../../../../Downloads/openFrameworks_vs/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
-
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -182,21 +180,19 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Division.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\MultiplicationClass.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\Addition.cpp" />
+    <ClCompile Include="src\Division.cpp" />
+    <ClCompile Include="src\MultiplicationClass.cpp" />
     <ClCompile Include="src\Subtraction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\Addition.h" />
     <ClInclude Include="src\Division.h" />
     <ClInclude Include="src\MultiplicationClass.h" />
-    <ClInclude Include="src\ofApp.h" />
-
-    <ClInclude Include="src\Addition.h" />
     <ClInclude Include="src\Subtraction.h" />
-
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
