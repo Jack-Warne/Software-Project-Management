@@ -1,6 +1,7 @@
 #include "ofApp.h"
 #include "ui/UiElement.h"
 #include "screens/MainScreen.h"
+#include "mathOperations.h"
 
 
 shared_ptr<UiElement> ofApp::root;	//	Declare the constants used by the ui system
@@ -22,6 +23,17 @@ void ofApp::setup(){
 	//	Your setup code goes here
 
 	this->current_number_accumulator = 0;
+
+	float resultAdd = MathOperations::add(5.0f, 3.0f);
+	float resultSubtract = MathOperations::subtract(5.0f, 3.0f);
+	float resultMultiply = MathOperations::multiply(5.0f, 3.0f);
+	float resultDivide = MathOperations::divide(5.0f, 3.0f);
+
+	// Output the results to console or use as needed
+	std::cout << "Addition: " << resultAdd << std::endl;
+	std::cout << "Subtraction: " << resultSubtract << std::endl;
+	std::cout << "Multiplication: " << resultMultiply << std::endl;
+	std::cout << "Division: " << resultDivide << std::endl;
 }
 
 //--------------------------------------------------------------
