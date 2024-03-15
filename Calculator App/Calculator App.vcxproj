@@ -186,17 +186,15 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\MultiplicationClass.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
-    <ClCompile Include="src\Addition.cpp" />
+    <ClCompile Include="src\mathOperations.cpp" />
     <ClCompile Include="src\Subtraction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Division.h" />
     <ClInclude Include="src\MultiplicationClass.h" />
     <ClInclude Include="src\ofApp.h" />
-
-    <ClInclude Include="src\Addition.h" />
+    <ClInclude Include="src\mathOperations.h" />
     <ClInclude Include="src\Subtraction.h" />
-
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
