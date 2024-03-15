@@ -20,3 +20,6 @@
 *.pdb
 *.lastbuildstate
 *.recipe
+*.exp
+*.res
+*.lib
