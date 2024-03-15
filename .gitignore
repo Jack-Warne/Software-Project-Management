@@ -3,4 +3,20 @@
 ################################################################################
 
 /.vs
+/.vs/*
 /Calculator App/.vs/Calculator App
+/bin
+/bin/*
+/obj
+/obj/*
+
+*.tlog
+*.exe
+*.dll
+*.obj
+*.o
+*.log
+*.ilk
+*.pdb
+*.lastbuildstate
+*.recipe
