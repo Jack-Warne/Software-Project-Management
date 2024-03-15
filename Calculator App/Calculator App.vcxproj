@@ -197,7 +197,6 @@
     <ClInclude Include="src\MultiplicationClass.h" />
     <ClInclude Include="src\mathOperations.h" />
     <ClInclude Include="src\screens\MainScreen.h" />
-    <ClInclude Include="src\Addition.h" />
     <ClInclude Include="src\ui\UiBox.h" />
     <ClInclude Include="src\ui\UiButton.h" />
     <ClInclude Include="src\ui\UiElement.h" />
