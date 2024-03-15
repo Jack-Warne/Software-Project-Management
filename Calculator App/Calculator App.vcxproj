@@ -182,9 +182,7 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
-    <ClCompile Include="src\Addition.cpp" />
-    <ClCompile Include="src\Division.cpp" />
-    <ClCompile Include="src\MultiplicationClass.cpp" />
+    <ClCompile Include="src\mathOperations.cpp" />
     <ClCompile Include="src\screens\MainScreen.cpp" />
     <ClCompile Include="src\Subtraction.cpp" />
     <ClCompile Include="src\ui\UiBox.cpp" />
@@ -197,12 +195,15 @@
     <ClInclude Include="src\Addition.h" />
     <ClInclude Include="src\Division.h" />
     <ClInclude Include="src\MultiplicationClass.h" />
+    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\mathOperations.h" />
     <ClInclude Include="src\screens\MainScreen.h" />
-    <ClInclude Include="src\Subtraction.h" />
+    <ClInclude Include="src\Addition.h" />
     <ClInclude Include="src\ui\UiBox.h" />
     <ClInclude Include="src\ui\UiButton.h" />
     <ClInclude Include="src\ui\UiElement.h" />
     <ClInclude Include="src\ui\UiText.h" />
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
