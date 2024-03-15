@@ -1,9 +1,20 @@
 #include "ofApp.h"
+#include "mathOperations.h"
+
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup() {
+    float resultAdd = MathOperations::add(5.0f, 3.0f);
+    float resultSubtract = MathOperations::subtract(5.0f, 3.0f);
+    float resultMultiply = MathOperations::multiply(5.0f, 3.0f);
+    float resultDivide = MathOperations::divide(5.0f, 3.0f);
 
-}
+    // Output the results to console or use as needed
+    std::cout << "Addition: " << resultAdd << std::endl;
+    std::cout << "Subtraction: " << resultSubtract << std::endl;
+    std::cout << "Multiplication: " << resultMultiply << std::endl;
+    std::cout << "Division: " << resultDivide << std::endl;
+};
 
 //--------------------------------------------------------------
 void ofApp::update(){
