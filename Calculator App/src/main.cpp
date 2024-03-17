@@ -12,7 +12,7 @@ int main() {
     cin >> num1 >> num2;
 
     float product = multiplier.multiply(num1, num2);
-    cout << "Product = " << product << endl;
+    cout << "Product = " << product << "\a" << endl;
 
     return 0;
 };
