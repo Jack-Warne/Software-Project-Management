@@ -31,5 +31,6 @@ public:
 	/// </summary>
 	void updateWordWrapping();
 
+	void set_text(std::string new_text);
 };
 
