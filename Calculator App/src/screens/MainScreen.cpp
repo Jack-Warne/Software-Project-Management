@@ -3,7 +3,11 @@
 #include "screens/MainScreen.h"
 #include "ui/UiBox.h"
 
-MainScreen::MainScreen() : UiElement(0, 0, ofGetWidth(), ofGetHeight()) {
+const char HEX_ALPHABET[] = "0123456789ABCDEF";
+
+MainScreen::MainScreen() : CalculatorScreen() {
+	//	Here are a couple examples on how to use my Ui Framework
+
 	//	When something has a data type of "auto" C++ will try to determine the type of this variable for you. Only works inside functions/methods.
 	auto btn_click_handler = []() {	//	This is how you define lambda functions in C++. The code inside this lambda will be ran every time the button is clicked.
 		std::cout << "The button has been pressed!" << std::endl;
@@ -25,4 +29,46 @@ MainScreen::MainScreen() : UiElement(0, 0, ofGetWidth(), ofGetHeight()) {
 	};
 
 	this->addChild(other_btn);	//	Adds the button to the screen
+
+
+	//	Now for the actual calculator code
+
+	this->output_text = make_shared<UiText>("0", 20, 20, this->width - 40);
+	this->output_text->doWordWrapping = false;
+	this->output_text->textAlignment = UiText::TextAlignment::Right;
+	this->addChild(this->output_text);
+}
+
+void MainScreen::update_display(bool isHex) {
+	//	Update the text displayed in the calculator's output
+	std::string output_string;
+	if (isHex) {
+		double dinteger_part;
+		std::modf(ofApp::mainApp->current_number_accumulator, &dinteger_part);
+		unsigned int integer_part = std::make_unsigned_t<int>(static_cast<int>(dinteger_part));
+
+		output_string = "";
+		if (integer_part == 0) {
+			output_string += "$0";
+		}
+		else {
+			//	Converts the integer part of the number to a hex number
+			while (integer_part != 0) {
+				auto nibble = integer_part & 0xF;
+				output_string += HEX_ALPHABET[nibble];
+				integer_part >>= 4;
+			}
+			output_string += '$';
+
+			std::reverse(output_string.begin(), output_string.end());
+		}
+	}
+	else {
+		output_string = std::to_string(ofApp::mainApp->current_number_accumulator);
+
+		//	Remove trailing zeros
+		output_string.erase(output_string.find_last_not_of('0') + 1, std::string::npos);
+		output_string.erase(output_string.find_last_not_of('.') + 1, std::string::npos);
+	}
+	this->output_text->set_text(output_string);
 }
