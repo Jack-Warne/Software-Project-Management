@@ -1,19 +1,19 @@
 #include "MathOperations.h"
 #include <iostream>
 
-float MathOperations::add(float a, float b) {
+double MathOperations::add(double a, double b) {
     return a + b;
 }
 
-float MathOperations::subtract(float a, float b) {
+double MathOperations::subtract(double a, double b) {
     return a - b;
 }
 
-float MathOperations::multiply(float a, float b) {
+double MathOperations::multiply(double a, double b) {
     return a * b;
 }
 
-float MathOperations::divide(float a, float b) {
+double MathOperations::divide(double a, double b) {
     if (b == 0) {
         // Division by zero error
         return 0; // Just a placeholder because can't return a string yet :DDD

@@ -2,8 +2,8 @@
 
 class MathOperations {
 public:
-    static float add(float a, float b);
-    static float subtract(float a, float b);
-    static float multiply(float a, float b);
-    static float divide(float a, float b);
+    static double add(double a, double b);
+    static double subtract(double a, double b);
+    static double multiply(double a, double b);
+    static double divide(double a, double b);
 };

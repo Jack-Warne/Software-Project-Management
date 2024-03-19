@@ -4,8 +4,6 @@
 #include "ui/UiElement.h"
 
 class ofApp : public ofBaseApp{
-	private:
-		int current_number_accumulator;
 	public:
 		static shared_ptr<UiElement> root;
 		static ofApp* mainApp;
@@ -13,6 +11,7 @@ class ofApp : public ofBaseApp{
 		static weak_ptr<UiElement> hoveredElement;
 		static ofTrueTypeFont normalFont;
 
+		double current_number_accumulator;
 
 		bool isLeftMousePressed = false;
 

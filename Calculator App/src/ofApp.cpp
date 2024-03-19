@@ -66,7 +66,7 @@ void ofApp::keyReleased(int key){
 	case 8:
 	case 67:
 	case 99:
-		this->current_number_accumulator /= 10;	//	Remove the last digit
+		this->current_number_accumulator = std::floor(this->current_number_accumulator/10.);//	Remove the last digit
 		break;
 
 	default:
