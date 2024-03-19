@@ -25,6 +25,9 @@
 		<ClCompile Include="src\ofApp.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
+		<ClCompile Include="src\screens\CalculatorScreen.cpp">
+			<Filter>src\screens</Filter>
+		</ClCompile>
 		<ClCompile Include="src\screens\MainScreen.cpp">
 			<Filter>src\screens</Filter>
 		</ClCompile>
@@ -73,6 +76,9 @@
 		</ClInclude>
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\screens\CalculatorScreen.h">
+			<Filter>src\screens</Filter>
 		</ClInclude>
 		<ClInclude Include="src\screens\MainScreen.h">
 			<Filter>src\screens</Filter>

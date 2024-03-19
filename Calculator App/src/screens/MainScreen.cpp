@@ -20,7 +20,7 @@ MainScreen::MainScreen() : CalculatorScreen() {
 
 	this->addChild(btn);	//	Adds the button to the screen, allowing it to be drawn and interacted with
 
-	std::shared_ptr<UiButton> other_btn = UiButton::makeButtonWithLabel("Make this button green", 50, 200, []() {});	//	You can define the onClickHandler to be empty at first, and change it later
+	std::shared_ptr<UiButton> other_btn = UiButton::makeButtonWithLabel("Make this button green", 50, 300, []() {});	//	You can define the onClickHandler to be empty at first, and change it later
 
 	other_btn->onClickHandler = [this, other_btn]() {	//	If you use a variable defined outside of the lambda function you need to put it in the square brackets, otherwise your code will not compile.
 		other_btn->fillColor = ofColor(0, 255, 0);	//	Simple code which makes the above button more green when you press it.
@@ -29,15 +29,15 @@ MainScreen::MainScreen() : CalculatorScreen() {
 	};
 
 	for (int i = 0; i < 10; i++) {
-		auto btn = UiButton::makeButtonWithLabel(std::to_string(i), 200, 50 + 75 * i, [i]() {
+		auto btn = UiButton::makeButtonWithLabel(std::to_string(i), 200, 50 + 65 * i, [i]() {
 				ofApp::mainApp->keyReleased('0'+i);
 			});
 		this->addChild(btn);
 	}
 
-	UiButton::makeButtonWithLabel("C", 200, 200, []() {
+	this->addChild(UiButton::makeButtonWithLabel("C", 300, 200, []() {
 		ofApp::mainApp->keyReleased('c');
-		});
+		}));
 
 	this->addChild(other_btn);	//	Adds the button to the screen
 

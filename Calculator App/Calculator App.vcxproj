@@ -186,6 +186,7 @@
     <ClCompile Include="src\Division.cpp" />
     <ClCompile Include="src\mathOperations.cpp" />
     <ClCompile Include="src\MultiplicationClass.cpp" />
+    <ClCompile Include="src\screens\CalculatorScreen.cpp" />
     <ClCompile Include="src\screens\MainScreen.cpp" />
     <ClCompile Include="src\Subtraction.cpp" />
     <ClCompile Include="src\ui\UiBox.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="src\Division.h" />
     <ClInclude Include="src\mathOperations.h" />
     <ClInclude Include="src\MultiplicationClass.h" />
+    <ClInclude Include="src\screens\CalculatorScreen.h" />
     <ClInclude Include="src\screens\MainScreen.h" />
     <ClInclude Include="src\Subtraction.h" />
     <ClInclude Include="src\ui\UiBox.h" />
