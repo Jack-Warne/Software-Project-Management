@@ -4,7 +4,7 @@
 #include "mathOperations.h"
 
 
-shared_ptr<UiElement> ofApp::root;	//	Declare the constants used by the ui system
+shared_ptr<CalculatorScreen> ofApp::root;	//	Declare the constants used by the ui system
 ofApp* ofApp::mainApp;
 weak_ptr<UiElement> ofApp::hoveredElement;
 ofTrueTypeFont ofApp::normalFont;
@@ -13,10 +13,15 @@ ofTrueTypeFont ofApp::normalFont;
 void ofApp::setup(){
 	mainApp = this;	//	Define some constants for the ui system
 
-	string current_directory = std::filesystem::current_path().string();
+	auto project_directory = std::filesystem::current_path().parent_path();
+	auto normal_font_path = project_directory;
+	normal_font_path.append("assets");
+	normal_font_path.append("fonts");
+	normal_font_path.append("coolvetica.ttf");
+	std::cout << normal_font_path.string() << std::endl;
 
 	//	Load the fonts here
-	ofApp::normalFont.load(current_directory+"\\fonts\\coolvetica.ttf", 25);	//	https://www.dafont.com/coolvetica.font with a size of 25 pixels
+	ofApp::normalFont.load(normal_font_path.string(), 25);	//	https://www.dafont.com/coolvetica.font with a size of 25 pixels
 
 	ofApp::root = make_shared<MainScreen>();	//	Show the first screen. To change to a different screen after this is called please use ofApp::changeScreens()
 
@@ -63,7 +68,10 @@ void ofApp::keyReleased(int key){
 	case 99:
 		this->current_number_accumulator /= 10;	//	Remove the last digit
 		break;
-
+	case 72:
+	case 104:
+		this->isHexMode = !this->isHexMode;
+		break;
 	default:
 		if (key >= 48 && key < 58) {
 			this->current_number_accumulator = this->current_number_accumulator * 10 + (key - 48);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
@@ -115,8 +123,6 @@ void ofApp::updateMouseHoveredElement(float mouseX, float mouseY, std::weak_ptr<
 
 
 void ofApp::update_screen(){
+	root->update_display(isHexMode);
 	std::cout << this->current_number_accumulator << std::endl;
 }
-
-
-
