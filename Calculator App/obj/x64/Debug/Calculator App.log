@@ -1,53 +1,9 @@
-﻿  main.cpp
-  ofApp.cpp
-  Subtraction.cpp
-  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
-  Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(326,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(331,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(912,11): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(913,11): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(914,11): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(915,11): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(326,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/ofApp.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(331,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/ofApp.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(912,11): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/ofApp.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(913,11): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/ofApp.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(914,11): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/ofApp.cpp')
-  
-C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\openFrameworks\math\ofMatrix4x4.h(915,11): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'src/ofApp.cpp')
-  
-     Creating library bin\Calculator App_debug.lib and object bin\Calculator App_debug.exp
+﻿  Addition.cpp
   Calculator App.vcxproj -> C:\Users\BSULoan\source\repos\Jack-Warne\Software-Project-Management\Calculator App\bin\Calculator App_debug.exe
   
   	                   2	C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\fmod\lib\vs\x64\
-  	  *EXTRA File 		 6018560	C:\Users\BSULoan\source\repos\Jack-Warne\Software-Project-Management\Calculator App\bin\FreeImage.dll
-  	    Older     		 1826304	C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\fmod\lib\vs\x64\fmod.dll
-  	    Older     		 2041856	C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\fmod\lib\vs\x64\fmodL.dll
+  	  *EXTRA File 		 6942208	C:\Users\BSULoan\source\repos\Jack-Warne\Software-Project-Management\Calculator App\bin\FreeImage.dll
   
   	                   1	C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\FreeImage\lib\vs\x64\
   	  *EXTRA File 		 1826304	C:\Users\BSULoan\source\repos\Jack-Warne\Software-Project-Management\Calculator App\bin\fmod.dll
   	  *EXTRA File 		 2041856	C:\Users\BSULoan\source\repos\Jack-Warne\Software-Project-Management\Calculator App\bin\fmodL.dll
-  	    Older     		 6942208	C:\Users\BSULoan\Desktop\openFrameworks_vs\openFrameworks_vs\libs\FreeImage\lib\vs\x64\FreeImage.dll

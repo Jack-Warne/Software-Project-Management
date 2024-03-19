@@ -3,6 +3,7 @@
 class Addition {
 public:
 
-    // Function to perform subtraction and output result
-    float calculate(float inputA, float inputB);
+    
+    double calculate(double inputA, double inputB);
+    double calculatePercentage(double total, double percentage);
 };
