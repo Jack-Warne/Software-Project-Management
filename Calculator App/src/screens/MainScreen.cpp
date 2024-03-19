@@ -28,6 +28,17 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		other_btn->clickColor = ofColor(0, 255, 0);
 	};
 
+	for (int i = 0; i < 10; i++) {
+		auto btn = UiButton::makeButtonWithLabel(std::to_string(i), 200, 50 + 75 * i, [i]() {
+				ofApp::mainApp->keyReleased('0'+i);
+			});
+		this->addChild(btn);
+	}
+
+	UiButton::makeButtonWithLabel("C", 200, 200, []() {
+		ofApp::mainApp->keyReleased('c');
+		});
+
 	this->addChild(other_btn);	//	Adds the button to the screen
 
 
