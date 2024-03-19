@@ -3,7 +3,11 @@
 #include "screens/MainScreen.h"
 #include "ui/UiBox.h"
 
-MainScreen::MainScreen() : UiElement(0, 0, ofGetWidth(), ofGetHeight()) {
+const char HEX_ALPHABET[] = "0123456789ABCDEF";
+
+MainScreen::MainScreen() : CalculatorScreen() {
+	//	Here are a couple examples on how to use my Ui Framework
+
 	//	When something has a data type of "auto" C++ will try to determine the type of this variable for you. Only works inside functions/methods.
 	auto btn_click_handler = []() {	//	This is how you define lambda functions in C++. The code inside this lambda will be ran every time the button is clicked.
 		std::cout << "The button has been pressed!" << std::endl;
@@ -16,7 +20,7 @@ MainScreen::MainScreen() : UiElement(0, 0, ofGetWidth(), ofGetHeight()) {
 
 	this->addChild(btn);	//	Adds the button to the screen, allowing it to be drawn and interacted with
 
-	std::shared_ptr<UiButton> other_btn = UiButton::makeButtonWithLabel("Make this button green", 50, 200, []() {});	//	You can define the onClickHandler to be empty at first, and change it later
+	std::shared_ptr<UiButton> other_btn = UiButton::makeButtonWithLabel("Make this button green", 50, 300, []() {});	//	You can define the onClickHandler to be empty at first, and change it later
 
 	other_btn->onClickHandler = [this, other_btn]() {	//	If you use a variable defined outside of the lambda function you need to put it in the square brackets, otherwise your code will not compile.
 		other_btn->fillColor = ofColor(0, 255, 0);	//	Simple code which makes the above button more green when you press it.
@@ -24,5 +28,58 @@ MainScreen::MainScreen() : UiElement(0, 0, ofGetWidth(), ofGetHeight()) {
 		other_btn->clickColor = ofColor(0, 255, 0);
 	};
 
+	for (int i = 0; i < 10; i++) {
+		auto btn = UiButton::makeButtonWithLabel(std::to_string(i), 200, 50 + 65 * i, [i]() {
+				ofApp::mainApp->keyReleased('0'+i);
+			});
+		this->addChild(btn);
+	}
+
+	this->addChild(UiButton::makeButtonWithLabel("C", 300, 200, []() {
+		ofApp::mainApp->keyReleased('c');
+		}));
+
 	this->addChild(other_btn);	//	Adds the button to the screen
+
+
+	//	Now for the actual calculator code
+
+	this->output_text = make_shared<UiText>("0", 20, 20, this->width - 40);
+	this->output_text->doWordWrapping = false;
+	this->output_text->textAlignment = UiText::TextAlignment::Right;
+	this->addChild(this->output_text);
+}
+
+void MainScreen::update_display(bool isHex) {
+	//	Update the text displayed in the calculator's output
+	std::string output_string;
+	if (isHex) {
+		double dinteger_part;
+		std::modf(ofApp::mainApp->current_number_accumulator, &dinteger_part);
+		unsigned int integer_part = std::make_unsigned_t<int>(static_cast<int>(dinteger_part));
+
+		output_string = "";
+		if (integer_part == 0) {
+			output_string += "$0";
+		}
+		else {
+			//	Converts the integer part of the number to a hex number
+			while (integer_part != 0) {
+				auto nibble = integer_part & 0xF;
+				output_string += HEX_ALPHABET[nibble];
+				integer_part >>= 4;
+			}
+			output_string += '$';
+
+			std::reverse(output_string.begin(), output_string.end());
+		}
+	}
+	else {
+		output_string = std::to_string(ofApp::mainApp->current_number_accumulator);
+
+		//	Remove trailing zeros
+		output_string.erase(output_string.find_last_not_of('0') + 1, std::string::npos);
+		output_string.erase(output_string.find_last_not_of('.') + 1, std::string::npos);
+	}
+	this->output_text->set_text(output_string);
 }

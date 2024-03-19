@@ -2,10 +2,11 @@
 
 #include "ofMain.h"
 #include "ui/UiElement.h"
+#include <screens/CalculatorScreen.h>
 
 class ofApp : public ofBaseApp{
 	public:
-		static shared_ptr<UiElement> root;
+		static shared_ptr<CalculatorScreen> root;
 		static ofApp* mainApp;
 
 		static weak_ptr<UiElement> hoveredElement;
@@ -14,7 +15,11 @@ class ofApp : public ofBaseApp{
 		double current_number_accumulator;
 
 		bool isLeftMousePressed = false;
+		bool isHexMode = false;
 
+		double current_number_accumulator;
+
+		std::function<void(bool)> on_display_update;
 
 		void setup();
 		void update();

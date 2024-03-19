@@ -89,3 +89,13 @@ void UiText::onRender(float x, float y) {
 	}
 	UiElement::onRender(x, y);	//	Call onRender on this element's children
 }
+/// <summary>
+/// Changes what text this element displays, and updates word wrapping.
+/// </summary>
+/// <param name="new_text">new text to be displayed</param>
+void UiText::set_text(std::string new_text) {
+	if (new_text != this->text) {
+		this->text = new_text;
+		this->updateWordWrapping();
+	}
+}
