@@ -13,10 +13,15 @@ ofTrueTypeFont ofApp::normalFont;
 void ofApp::setup(){
 	mainApp = this;	//	Define some constants for the ui system
 
-	string current_directory = std::filesystem::current_path().string();
+	auto project_directory = std::filesystem::current_path().parent_path();
+	auto normal_font_path = project_directory;
+	normal_font_path.append("assets");
+	normal_font_path.append("fonts");
+	normal_font_path.append("coolvetica.ttf");
+	std::cout << normal_font_path.string() << std::endl;
 
 	//	Load the fonts here
-	ofApp::normalFont.load(current_directory+"\\fonts\\coolvetica.ttf", 25);	//	https://www.dafont.com/coolvetica.font with a size of 25 pixels
+	ofApp::normalFont.load(normal_font_path.string(), 25);	//	https://www.dafont.com/coolvetica.font with a size of 25 pixels
 
 	ofApp::root = make_shared<MainScreen>();	//	Show the first screen. To change to a different screen after this is called please use ofApp::changeScreens()
 
