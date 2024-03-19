@@ -2,11 +2,11 @@
 #include <iostream>
 #include <sstream>
 
-float MathOperations::evaluate(const std::string& expression) {
+double MathOperations::evaluate(const std::string& expression) {
     std::istringstream iss(expression);
-    float result = 0.0f;
+    double result = 0.0f;
     char op = '+';
-    float operand;
+    double operand;
 
     while (iss >> operand) {
         switch (op) {
