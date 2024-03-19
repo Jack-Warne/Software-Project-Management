@@ -34,6 +34,9 @@
     <ClCompile Include="src\ui\UiText.cpp">
       <Filter>src\ui</Filter>
     </ClCompile>
+    <ClCompile Include="src\screens\CalculatorScreen.cpp">
+      <Filter>src\screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="src\mathOperations.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\screens\CalculatorScreen.h">
+      <Filter>src\screens</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

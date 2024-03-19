@@ -4,7 +4,7 @@
 #include "mathOperations.h"
 
 
-shared_ptr<UiElement> ofApp::root;	//	Declare the constants used by the ui system
+shared_ptr<CalculatorScreen> ofApp::root;	//	Declare the constants used by the ui system
 ofApp* ofApp::mainApp;
 weak_ptr<UiElement> ofApp::hoveredElement;
 ofTrueTypeFont ofApp::normalFont;
@@ -63,7 +63,10 @@ void ofApp::keyReleased(int key){
 	case 99:
 		this->current_number_accumulator /= 10;	//	Remove the last digit
 		break;
-
+	case 72:
+	case 104:
+		this->isHexMode = !this->isHexMode;
+		break;
 	default:
 		if (key >= 48 && key < 58) {
 			this->current_number_accumulator = this->current_number_accumulator * 10 + (key - 48);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
@@ -115,8 +118,6 @@ void ofApp::updateMouseHoveredElement(float mouseX, float mouseY, std::weak_ptr<
 
 
 void ofApp::update_screen(){
+	root->update_display(isHexMode);
 	std::cout << this->current_number_accumulator << std::endl;
 }
-
-
-

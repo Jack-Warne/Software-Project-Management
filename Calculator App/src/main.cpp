@@ -4,11 +4,11 @@
 
 //========================================================================
 int main() {
-	ofSetupOpenGL(1024, 768, OF_WINDOW);			// <-------- setup the GL context
+	//	A variation of the OpenFrameworks code for starting a window. This one also prevents the window from being resized
+	ofGLFWWindowSettings settings;
+	settings.resizable = false;
+	settings.setSize(1024, 768);
+	ofCreateWindow(settings);
 
-	// this kicks off the running of my app
-	// can be OF_WINDOW or OF_FULLSCREEN
-	// pass in width and height too:
-	ofRunApp(new ofApp());
-
+	return ofRunApp(new ofApp);
 }
