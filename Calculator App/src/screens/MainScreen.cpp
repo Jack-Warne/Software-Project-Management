@@ -31,6 +31,9 @@ MainScreen::MainScreen() : UiElement(0, 0, ofGetWidth(), ofGetHeight()) {
 		this->addChild(btn);
 	}
 
+	UiButton::makeButtonWithLabel("C", 200, 200, []() {
+		ofApp::mainApp->keyReleased('c');
+		});
 
 	this->addChild(other_btn);	//	Adds the button to the screen
 }
