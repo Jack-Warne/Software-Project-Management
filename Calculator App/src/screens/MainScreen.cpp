@@ -53,33 +53,59 @@ MainScreen::MainScreen() : CalculatorScreen() {
 void MainScreen::update_display(bool isHex) {
 	//	Update the text displayed in the calculator's output
 	std::string output_string;
-	if (isHex) {
-		double dinteger_part;
-		std::modf(ofApp::mainApp->current_number_accumulator, &dinteger_part);
-		unsigned int integer_part = std::make_unsigned_t<int>(static_cast<int>(dinteger_part));
 
-		output_string = "";
-		if (integer_part == 0) {
-			output_string += "$0";
+
+	if (ofApp::mainApp->current_error != ErrorCode::Success) {
+		switch (ofApp::mainApp->current_error) {
+			case ErrorCode::DivideByZero:
+				output_string = "Cannot divide by zero.";
+				break;
+			case ErrorCode::Parse:
+				output_string = "Could not parse the equation.";
+				break;
+			case ErrorCode::Ui:
+				output_string = "Error while displaying the UI.";
+				break;
+			case ErrorCode::NotANumber:
+				output_string = "Not a number";
+				break;
+			case ErrorCode::NotAnInteger:
+				output_string = "Not an integer";
+				break;
+			default:
+				output_string = "Unknown error.";
+				break;
+		}
+	} else {
+		//	If there is a custom message to display we should display it instead of the result
+		if (isHex) {
+			double dinteger_part;
+			std::modf(ofApp::mainApp->current_number_accumulator, &dinteger_part);
+			unsigned int integer_part = std::make_unsigned_t<int>(static_cast<int>(dinteger_part));
+
+			output_string = "";
+			if (integer_part == 0) {
+				output_string += "$0";
+			}
+			else {
+				//	Converts the integer part of the number to a hex number
+				while (integer_part != 0) {
+					auto nibble = integer_part & 0xF;
+					output_string += HEX_ALPHABET[nibble];
+					integer_part >>= 4;
+				}
+				output_string += '$';
+
+				std::reverse(output_string.begin(), output_string.end());
+			}
 		}
 		else {
-			//	Converts the integer part of the number to a hex number
-			while (integer_part != 0) {
-				auto nibble = integer_part & 0xF;
-				output_string += HEX_ALPHABET[nibble];
-				integer_part >>= 4;
-			}
-			output_string += '$';
+			output_string = std::to_string(ofApp::mainApp->current_number_accumulator);
 
-			std::reverse(output_string.begin(), output_string.end());
+			//	Remove trailing zeros
+			output_string.erase(output_string.find_last_not_of('0') + 1, std::string::npos);
+			output_string.erase(output_string.find_last_not_of('.') + 1, std::string::npos);
 		}
-	}
-	else {
-		output_string = std::to_string(ofApp::mainApp->current_number_accumulator);
-
-		//	Remove trailing zeros
-		output_string.erase(output_string.find_last_not_of('0') + 1, std::string::npos);
-		output_string.erase(output_string.find_last_not_of('.') + 1, std::string::npos);
 	}
 	this->output_text->set_text(output_string);
 }

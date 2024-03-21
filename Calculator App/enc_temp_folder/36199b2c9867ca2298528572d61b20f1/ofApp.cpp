@@ -78,6 +78,7 @@ void ofApp::keyReleased(int key){
 				this->isHexMode = !this->isHexMode;
 				break;
 			case 47:	//	Division
+				new_result = MathOperations::divide(this->current_number_accumulator, this->current_number_accumulator);
 				break;
 			case 42:	//	Multiply
 				break;
@@ -94,12 +95,13 @@ void ofApp::keyReleased(int key){
 				}
 			}
 			if (std::isnan(new_result) || std::isinf(new_result)) {
-				throw ErrorCode::NotANumber;
+				this->current_error = ErrorCode::NotANumber;
 			} else {
 				this->current_number_accumulator = new_result;
 			}
 		}
 	
+
 		this->update_screen();	//	Update the screen once everything is done
 	}
 	catch (ErrorCode code) {

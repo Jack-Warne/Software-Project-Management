@@ -74,6 +74,9 @@
     <ClInclude Include="src\ui\UiText.h">
       <Filter>src\ui</Filter>
     </ClInclude>
+    <ClInclude Include="src\ErrorCodes.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
