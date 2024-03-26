@@ -36,6 +36,9 @@ float MathOperations::evaluate(const std::string& expression) {
 
     return result;
 }
+
+// left these here incase they are useful for bidmas, however they are not called currently as it is all done in thee multiple operations function
+
 float MathOperations::add(float a, float b) {
     return a + b;
 }

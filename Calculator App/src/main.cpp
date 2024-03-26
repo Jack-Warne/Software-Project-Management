@@ -1,18 +1,13 @@
-#include "../MultiplicationClass.h"
-#include <iostream>
-using namespace std;
+#include "ofMain.h"
+#include "ofApp.h"
 
 //========================================================================
 int main() {
+	ofSetupOpenGL(1024, 768, OF_WINDOW);			// <-------- setup the GL context
 
-    MultiplicationClass multiplier;
-    float num1, num2;
+	// this kicks off the running of my app
+	// can be OF_WINDOW or OF_FULLSCREEN
+	// pass in width and height too:
+	ofRunApp(new ofApp());
 
-    cout << "Enter two numbers: ";
-    cin >> num1 >> num2;
-
-    float product = multiplier.multiply(num1, num2);
-    cout << "Product = " << product << endl;
-
-    return 0;
-};
+}
