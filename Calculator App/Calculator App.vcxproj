@@ -185,6 +185,7 @@
     <ClCompile Include="src\mathOperations.cpp" />
     <ClCompile Include="src\screens\CalculatorScreen.cpp" />
     <ClCompile Include="src\screens\MainScreen.cpp" />
+    <ClCompile Include="src\ShuntingYard.cpp" />
     <ClCompile Include="src\ui\UiBox.cpp" />
     <ClCompile Include="src\ui\UiButton.cpp" />
     <ClCompile Include="src\ui\UiElement.cpp" />
@@ -195,6 +196,7 @@
     <ClInclude Include="src\mathOperations.h" />
     <ClInclude Include="src\screens\CalculatorScreen.h" />
     <ClInclude Include="src\screens\MainScreen.h" />
+    <ClInclude Include="src\ShuntingYard.h" />
     <ClInclude Include="src\ui\UiBox.h" />
     <ClInclude Include="src\ui\UiButton.h" />
     <ClInclude Include="src\ui\UiElement.h" />

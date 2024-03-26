@@ -34,6 +34,9 @@
     <ClCompile Include="src\ui\UiText.cpp">
       <Filter>src\ui</Filter>
     </ClCompile>
+    <ClCompile Include="src\ShuntingYard.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -73,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="src\ui\UiText.h">
       <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShuntingYard.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
