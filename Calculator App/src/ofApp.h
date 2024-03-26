@@ -16,7 +16,7 @@ class ofApp : public ofBaseApp{
 		bool isLeftMousePressed = false;
 		bool isHexMode = false;
 
-		double current_number_accumulator;
+		std::string accumulator;	//	Stores the current result and operations
 
 		std::function<void(bool)> on_display_update;
 

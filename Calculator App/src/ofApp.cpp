@@ -27,7 +27,7 @@ void ofApp::setup(){
 
 	//	Your setup code goes here
 
-	this->current_number_accumulator = 0;
+	this->accumulator = "";
 
 	float resultAdd = MathOperations::add(5.0f, 3.0f);
 	float resultSubtract = MathOperations::subtract(5.0f, 3.0f);
@@ -58,23 +58,19 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
 	switch (key) {
-	case 77:
-	case 109:
-		this->current_number_accumulator *= -1;	//	Change the sign of the number in the accumulator
-		break;
-
 	case 8:
 	case 67:
 	case 99:
-		this->current_number_accumulator /= 10;	//	Remove the last digit
+		//	Remove the last digit
+		this->accumulator.pop_back();
 		break;
 	case 72:
-	case 104:
+	case 104:	//	Turn on hex mode
 		this->isHexMode = !this->isHexMode;
 		break;
 	default:
 		if (key >= 48 && key < 58) {
-			this->current_number_accumulator = this->current_number_accumulator * 10 + (key - 48);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
+			this->accumulator.push_back(key);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
 		}
 	}
 
@@ -124,5 +120,5 @@ void ofApp::updateMouseHoveredElement(float mouseX, float mouseY, std::weak_ptr<
 
 void ofApp::update_screen(){
 	root->update_display(isHexMode);
-	std::cout << this->current_number_accumulator << std::endl;
+	std::cout << this->accumulator << std::endl;
 }
