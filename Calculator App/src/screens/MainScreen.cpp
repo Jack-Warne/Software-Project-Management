@@ -52,4 +52,9 @@ MainScreen::MainScreen() : CalculatorScreen() {
 
 void MainScreen::update_display(bool isHex) {
 	//	Update the text displayed in the calculator's output
+	std::string output_string;
+
+	output_string = ofApp::mainApp->accumulator;
+	if (output_string.length() == 0) output_string = "0";
+	this->output_text->set_text(output_string);
 }
