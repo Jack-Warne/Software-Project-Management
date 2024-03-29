@@ -22,6 +22,9 @@
     <ClCompile Include="src\screens\MainScreen.cpp">
       <Filter>src\screens</Filter>
     </ClCompile>
+    <ClCompile Include="src\ShuntingYard.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="src\ui\UiBox.cpp">
       <Filter>src\ui</Filter>
     </ClCompile>
@@ -33,6 +36,9 @@
     </ClCompile>
     <ClCompile Include="src\ui\UiText.cpp">
       <Filter>src\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tokeniser.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +68,9 @@
     <ClInclude Include="src\screens\MainScreen.h">
       <Filter>src\screens</Filter>
     </ClInclude>
+    <ClInclude Include="src\ShuntingYard.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\ui\UiBox.h">
       <Filter>src\ui</Filter>
     </ClInclude>
@@ -75,6 +84,9 @@
       <Filter>src\ui</Filter>
     </ClInclude>
     <ClInclude Include="src\ErrorCodes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tokeniser.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

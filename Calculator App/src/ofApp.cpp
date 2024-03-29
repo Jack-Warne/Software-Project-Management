@@ -2,6 +2,7 @@
 #include "ui/UiElement.h"
 #include "screens/MainScreen.h"
 #include "mathOperations.h"
+#include "ShuntingYard.h"
 
 
 shared_ptr<CalculatorScreen> ofApp::root;	//	Declare the constants used by the ui system
@@ -27,18 +28,11 @@ void ofApp::setup(){
 
 	//	Your setup code goes here
 
-	this->current_number_accumulator = 0;
+	this->accumulator = "";
+	std::cout << std::endl << std::endl;
 
-	float resultAdd = MathOperations::add(5.0f, 3.0f);
-	float resultSubtract = MathOperations::subtract(5.0f, 3.0f);
-	float resultMultiply = MathOperations::multiply(5.0f, 3.0f);
-	float resultDivide = MathOperations::divide(5.0f, 3.0f);
-
-	// Output the results to console or use as needed
-	std::cout << "Addition: " << resultAdd << std::endl;
-	std::cout << "Subtraction: " << resultSubtract << std::endl;
-	std::cout << "Multiplication: " << resultMultiply << std::endl;
-	std::cout << "Division: " << resultDivide << std::endl;
+	std::string expr = "2-(.2* -   1.)/3";
+	std::cout << expr << " = " << ShuntingYard::evaluateExpression(expr) << std::endl;
 }
 
 //--------------------------------------------------------------
@@ -60,46 +54,25 @@ void ofApp::keyReleased(int key){
 	try {
 		if (this->current_error != ErrorCode::Success) {
 			this->current_error = ErrorCode::Success;
-		} else {
-			double new_result = this->current_number_accumulator;
+		}
+		else {
 			switch (key) {
-			case 77:
-			case 109:
-				new_result = this->current_number_accumulator * -1;	//	Change the sign of the number in the accumulator
-				break;
-
 			case 8:
 			case 67:
 			case 99:
-				new_result = this->current_number_accumulator / 10;	//	Remove the last digit
+				//	Remove the last digit
+				this->accumulator.pop_back();
 				break;
 			case 72:
-			case 104:
+			case 104:	//	Turn on hex mode
 				this->isHexMode = !this->isHexMode;
 				break;
-			case 47:	//	Division
-				break;
-			case 42:	//	Multiply
-				break;
-			case 45:	//	Subtract
-				break;
-			case 43:	//	Add
-				break;
-			case 61:	//	Calculate
-				break;
 			default:
-				std::cout << key << std::endl;	//	Uncomment to print out the pressed keys to console
 				if (key >= 48 && key < 58) {
-					new_result = this->current_number_accumulator * 10 + (key - 48);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
+					this->accumulator.push_back(key);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
 				}
 			}
-			if (std::isnan(new_result) || std::isinf(new_result)) {
-				throw ErrorCode::NotANumber;
-			} else {
-				this->current_number_accumulator = new_result;
-			}
 		}
-	
 		this->update_screen();	//	Update the screen once everything is done
 	}
 	catch (ErrorCode code) {
@@ -151,5 +124,5 @@ void ofApp::updateMouseHoveredElement(float mouseX, float mouseY, std::weak_ptr<
 
 void ofApp::update_screen(){
 	root->update_display(isHexMode);
-	std::cout << this->current_number_accumulator << std::endl;
+	std::cout << this->accumulator << std::endl;
 }
