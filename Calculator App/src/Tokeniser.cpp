@@ -1,4 +1,5 @@
 #include "Tokeniser.h"
+#include "./ErrorCodes.h"
 
 Tokeniser::Tokeniser(std::string text) {
 	this->text = text;
@@ -30,6 +31,7 @@ bool Tokeniser::readToken(std::string* token) {
 		
 		if (!isDigit(current)) {
 			if (current == '.') {
+				if (last == '.') throw ErrorCode::Parse;
 				if(!isDigit(last)) token->push_back('0');
 			}else{
 				this->head--;
