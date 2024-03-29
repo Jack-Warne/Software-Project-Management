@@ -31,7 +31,7 @@ void ofApp::setup(){
 	this->accumulator = "";
 	std::cout << std::endl << std::endl;
 
-	std::string expr = "2-(2*-1)/3";
+	std::string expr = "2-(.2* -   1.)/3";
 	std::cout << expr << " = " << ShuntingYard::evaluateExpression(expr) << std::endl;
 }
 

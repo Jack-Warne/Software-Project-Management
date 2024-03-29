@@ -30,7 +30,7 @@ bool Tokeniser::readToken(std::string* token) {
 		
 		if (!isDigit(current)) {
 			if (current == '.') {
-				token->push_back('0');
+				if(!isDigit(last)) token->push_back('0');
 			}else{
 				this->head--;
 				break;
