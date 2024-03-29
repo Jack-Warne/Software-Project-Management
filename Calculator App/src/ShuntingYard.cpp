@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <cctype>
+#include "Tokeniser.h"
 
 using namespace std;
 
@@ -9,14 +10,15 @@ double ShuntingYard::evaluateExpression(const string& expression) {
     stack<double> values;
     stack<char> operators;
 
-    istringstream iss(expression);
+    Tokeniser stream(expression);
     string token;
-    while (iss >> token) {
-        if (isdigit(token[0])) {
+    while (stream.readToken(&token)) {
+        char last = token.at(token.length() - 1);
+        if (isdigit(last)) {
             values.push(stod(token));
         }
-        else if (isOperator(token[0])) {
-            char op = token[0];
+        else if (isOperator(last)) {
+            char op = last;
             while (!operators.empty() && precedence(operators.top()) >= precedence(op)) {
                 double b = values.top(); values.pop();
                 double a = values.top(); values.pop();

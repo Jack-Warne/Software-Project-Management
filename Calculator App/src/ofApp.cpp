@@ -2,6 +2,7 @@
 #include "ui/UiElement.h"
 #include "screens/MainScreen.h"
 #include "mathOperations.h"
+#include "ShuntingYard.h"
 
 
 shared_ptr<CalculatorScreen> ofApp::root;	//	Declare the constants used by the ui system
@@ -28,17 +29,10 @@ void ofApp::setup(){
 	//	Your setup code goes here
 
 	this->accumulator = "";
+	std::cout << std::endl << std::endl;
 
-	float resultAdd = MathOperations::add(5.0f, 3.0f);
-	float resultSubtract = MathOperations::subtract(5.0f, 3.0f);
-	float resultMultiply = MathOperations::multiply(5.0f, 3.0f);
-	float resultDivide = MathOperations::divide(5.0f, 3.0f);
-
-	// Output the results to console or use as needed
-	std::cout << "Addition: " << resultAdd << std::endl;
-	std::cout << "Subtraction: " << resultSubtract << std::endl;
-	std::cout << "Multiplication: " << resultMultiply << std::endl;
-	std::cout << "Division: " << resultDivide << std::endl;
+	std::string expr = "2-(2*-1)/3";
+	std::cout << expr << " = " << ShuntingYard::evaluateExpression(expr) << std::endl;
 }
 
 //--------------------------------------------------------------
