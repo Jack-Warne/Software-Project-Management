@@ -51,24 +51,34 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-	switch (key) {
-	case 8:
-	case 67:
-	case 99:
-		//	Remove the last digit
-		this->accumulator.pop_back();
-		break;
-	case 72:
-	case 104:	//	Turn on hex mode
-		this->isHexMode = !this->isHexMode;
-		break;
-	default:
-		if (key >= 48 && key < 58) {
-			this->accumulator.push_back(key);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
+	try {
+		if (this->current_error != ErrorCode::Success) {
+			this->current_error = ErrorCode::Success;
 		}
+		else {
+			switch (key) {
+			case 8:
+			case 67:
+			case 99:
+				//	Remove the last digit
+				this->accumulator.pop_back();
+				break;
+			case 72:
+			case 104:	//	Turn on hex mode
+				this->isHexMode = !this->isHexMode;
+				break;
+			default:
+				if (key >= 48 && key < 58) {
+					this->accumulator.push_back(key);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
+				}
+			}
+		}
+		this->update_screen();	//	Update the screen once everything is done
 	}
-
-	this->update_screen();	//	Update the screen once everything is done
+	catch (ErrorCode code) {
+		this->current_error = code;
+		this->update_screen();	//	Update the screen once everything is done
+	}
 }
 
 void ofApp::mouseMoved(int x, int y) {

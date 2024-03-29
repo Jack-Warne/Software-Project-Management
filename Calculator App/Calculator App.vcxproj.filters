@@ -83,6 +83,9 @@
     <ClInclude Include="src\ui\UiText.h">
       <Filter>src\ui</Filter>
     </ClInclude>
+    <ClInclude Include="src\ErrorCodes.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Tokeniser.h">
       <Filter>src</Filter>
     </ClInclude>
