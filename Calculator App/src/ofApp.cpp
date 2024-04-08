@@ -62,7 +62,10 @@ void ofApp::keyReleased(int key){
 	case 67:
 	case 99:
 		//	Remove the last digit
-		this->accumulator.pop_back();
+		if (this->accumulator.length() > 0)
+		{
+			this->accumulator.pop_back();
+		}
 		break;
 	case 72:
 	case 104:	//	Turn on hex mode
