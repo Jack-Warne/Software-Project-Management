@@ -32,5 +32,6 @@ public:
 	void updateWordWrapping();
 
 	void set_text(std::string new_text);
+	int get_line_count();
 };
 
