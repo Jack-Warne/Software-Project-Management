@@ -34,6 +34,8 @@ std::shared_ptr<UiButton> UiButton::makeButtonWithLabel(std::string text, float 
 	label->textAlignment = UiText::TextAlignment::Center;
 	label->updateWordWrapping();
 
+	button->height = font->getLineHeight() * label->get_line_count() + 10;
+
 	return button;
 }
 

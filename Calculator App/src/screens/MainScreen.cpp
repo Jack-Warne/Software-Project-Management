@@ -35,7 +35,7 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		this->addChild(btn);
 	}
 
-	this->addChild(UiButton::makeButtonWithLabel("C", 300, 200, []() {
+	this->addChild(UiButton::makeButtonWithLabel("=", 300, 200, []() {
 		ofApp::mainApp->keyReleased('c');
 		}));
 

@@ -84,7 +84,7 @@ void UiText::onRender(float x, float y) {
 			break;
 		}
 
-		pFont->drawString(line, textXPosition, y + offset + std::round(textBoundingBox.getHeight() / pFont->getLineHeight()) * pFont->getLineHeight());	//	Draw the line to the screen. For some reason OpenFrameworks draws the text from the bottom left corner instead of the usual top left corner, so we have to offset the text by its height to account for that.
+		pFont->drawString(line, textXPosition, y + offset + pFont->getLineHeight());	//	Draw the line to the screen. For some reason OpenFrameworks draws the text from the bottom left corner instead of the usual top left corner, so we have to offset the text by its height to account for that.
 		offset += pFont->getLineHeight();
 	}
 	UiElement::onRender(x, y);	//	Call onRender on this element's children
@@ -98,4 +98,8 @@ void UiText::set_text(std::string new_text) {
 		this->text = new_text;
 		this->updateWordWrapping();
 	}
+}
+
+int UiText::get_line_count() {
+	return this->wordWrappedTextLines.size();
 }
