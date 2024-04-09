@@ -35,7 +35,7 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		this->addChild(btn);
 	}
 
-	this->addChild(UiButton::makeButtonWithLabel("C", 300, 200, []() {
+	this->addChild(UiButton::makeButtonWithLabel("=", 300, 200, []() {
 		ofApp::mainApp->keyReleased('c');
 		}));
 
@@ -54,7 +54,32 @@ void MainScreen::update_display(bool isHex) {
 	//	Update the text displayed in the calculator's output
 	std::string output_string;
 
-	output_string = ofApp::mainApp->accumulator;
-	if (output_string.length() == 0) output_string = "0";
+	if (ofApp::mainApp->current_error != ErrorCode::Success) {
+		//	If there is a custom message to display we should display it instead of the result
+		switch (ofApp::mainApp->current_error) {
+			case ErrorCode::DivideByZero:
+				output_string = "Cannot divide by zero.";
+				break;
+			case ErrorCode::Parse:
+				output_string = "Could not parse the equation.";
+				break;
+			case ErrorCode::Ui:
+				output_string = "Error while displaying the UI.";
+				break;
+			case ErrorCode::NotANumber:
+				output_string = "Not a number";
+				break;
+			case ErrorCode::NotAnInteger:
+				output_string = "Not an integer";
+				break;
+			default:
+				output_string = "Unknown error.";
+				break;
+		}
+	}
+	else {
+		output_string = ofApp::mainApp->accumulator;
+		if (output_string.length() == 0) output_string = "0";
+	}
 	this->output_text->set_text(output_string);
 }

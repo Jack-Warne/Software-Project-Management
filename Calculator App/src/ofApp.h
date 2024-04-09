@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ui/UiElement.h"
 #include <screens/CalculatorScreen.h>
+#include "ErrorCodes.h"
 
 class ofApp : public ofBaseApp{
 	public:
@@ -17,6 +18,7 @@ class ofApp : public ofBaseApp{
 		bool isHexMode = false;
 
 		std::string accumulator;	//	Stores the current result and operations
+		ErrorCode current_error = ErrorCode::Success;
 
 		std::function<void(bool)> on_display_update;
 
