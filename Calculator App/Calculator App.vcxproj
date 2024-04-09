@@ -193,6 +193,7 @@
     <ClCompile Include="src\ui\UiText.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ErrorCodes.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\mathOperations.h" />
     <ClInclude Include="src\screens\CalculatorScreen.h" />
