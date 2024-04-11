@@ -39,7 +39,12 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		ofApp::mainApp->keyReleased('c');
 		}));
 
-	this->addChild(other_btn);	//	Adds the button to the screen
+	this->addChild(UiButton::makeButtonWithLabel(" = ", 300, 300, []() {
+		ofApp::mainApp->keyReleased('c');
+		}, 50));
+	
+
+	//this->addChild(other_btn);	//	Adds the button to the screen
 
 
 	//	Now for the actual calculator code
