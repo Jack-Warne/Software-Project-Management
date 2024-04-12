@@ -49,9 +49,69 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		this->addChild(btn);
 	}
 
-	this->addChild(UiButton::makeButtonWithLabel("=", 300, 200, []() {
+	this->addChild(UiButton::makeButtonWithLabel("+", 70, 70, []() {
+		ofApp::mainApp->keyReleased('+');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("-", 135 , 70, []() {
+		ofApp::mainApp->keyReleased('-');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("x", 200, 70, []() {
+		ofApp::mainApp->keyReleased('x');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("/", 265, 70, []() {
+		ofApp::mainApp->keyReleased('/');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("0", 70, 135, []() {
+		ofApp::mainApp->keyReleased('0');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel(".", 135, 135, []() {
+		ofApp::mainApp->keyReleased('.');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("C", 200, 135, []() {
+		ofApp::mainApp->keyReleased('C');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("<-", 265, 135, []() {
+		ofApp::mainApp->keyReleased(' ');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("A", 70, 395, []() {
+		ofApp::mainApp->keyReleased('a');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("B", 135, 395, []() {
+		ofApp::mainApp->keyReleased('b');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("C", 200, 395, []() {
 		ofApp::mainApp->keyReleased('c');
-		},50));
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("D", 70, 460, []() {
+		ofApp::mainApp->keyReleased('d');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("E", 135, 460, []() {
+		ofApp::mainApp->keyReleased('e');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("F", 200, 460, []() {
+		ofApp::mainApp->keyReleased('f');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("hex", 265, 200, []() {
+		ofApp::mainApp->keyReleased('hex');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("=", 265, 265, []() {
+		ofApp::mainApp->keyReleased('=');
+		}, 50));
 
 	//this->addChild(other_btn);	//	Adds the button to the screen
 
