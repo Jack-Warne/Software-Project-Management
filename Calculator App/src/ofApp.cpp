@@ -99,6 +99,7 @@ void ofApp::keyReleased(int key){
 			case '-':
 			case '/':
 			case '*':
+			case '%':
 				this->accumulator.push_back(key);
 				break;
 			case 13:

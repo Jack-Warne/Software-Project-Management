@@ -15,7 +15,12 @@ double ShuntingYard::evaluateExpression(const string& expression) {
 	string token;
 	while (stream.readToken(&token)) {
 		char last = token.at(token.length() - 1);
-		if (isdigit(last)) {
+		if (last == '%') {
+			if (values.empty()) values.push(0.);
+			double new_val = values.top() / 100.;
+			values.pop();
+			values.push(new_val);
+		}else if (isdigit(last)) {
 			values.push(stod(token));
 		}
 		else if (isOperator(last)) {
