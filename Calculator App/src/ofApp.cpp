@@ -101,6 +101,14 @@ void ofApp::keyReleased(int key){
 			case '*':
 				this->accumulator.push_back(key);
 				break;
+			case 13:
+			case '=':
+				if (!this->isHexMode) this->accumulator = std::to_string(ShuntingYard::evaluateExpression(this->accumulator));
+				if (this->accumulator.find('.') != std::string::npos) {
+					while(this->accumulator[this->accumulator.size() - 1] == '0') this->accumulator.pop_back();
+				}
+				if (this->accumulator.find('.') == (this->accumulator.size() - 1)) this->accumulator.pop_back();
+				break;
 			default:
 				if (key >= '0' && key <= '9') {
 					this->accumulator.push_back(key);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
