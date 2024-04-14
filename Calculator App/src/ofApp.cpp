@@ -51,28 +51,71 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
+	key = tolower(key);
+	std::cout << key << std::endl;
 	try {
 		if (this->current_error != ErrorCode::Success) {
 			this->current_error = ErrorCode::Success;
 		}
 		else {
 			switch (key) {
-			case 8:
-			case 67:
-			case 99:
+			case 8:	//	Backspace
+			case ' ':
+			case 'x':
 				//	Remove the last digit
 				if (this->accumulator.length() > 0)
 				{
 					this->accumulator.pop_back();
 				}
 				break;
-			case 72:
-			case 104:	//	Turn on hex mode
-				this->isHexMode = !this->isHexMode;
+			case 'h':	//	Turn on hex mode
+				if (this->isHexMode) {
+					this->isHexMode = (
+						(this->accumulator.find("A") != std::string::npos) || 
+						(this->accumulator.find("B") != std::string::npos) || 
+						(this->accumulator.find("C") != std::string::npos) || 
+						(this->accumulator.find("D") != std::string::npos) || 
+						(this->accumulator.find("E") != std::string::npos) || 
+						(this->accumulator.find("F") != std::string::npos)
+						);
+				}
+				else {
+					this->isHexMode = (this->accumulator.find('.') == std::string::npos);
+				}
+				if (this->isHexMode) {
+					std::cout << "Hex Mode is on" << std::endl;
+				}
+				else {
+					std::cout << "Hex Mode is off" << std::endl;
+				}
+				break;
+			case '.':
+				if (!this->isHexMode) {
+					this->accumulator.push_back(key);
+				}
+				break;
+				
+			case '+':
+			case '-':
+			case '/':
+			case '*':
+			case '%':
+				this->accumulator.push_back(key);
+				break;
+			case 13:
+			case '=':
+				if (!this->isHexMode) this->accumulator = std::to_string(ShuntingYard::evaluateExpression(this->accumulator));
+				if (this->accumulator.find('.') != std::string::npos) {
+					while(this->accumulator[this->accumulator.size() - 1] == '0') this->accumulator.pop_back();
+				}
+				if (this->accumulator.find('.') == (this->accumulator.size() - 1)) this->accumulator.pop_back();
 				break;
 			default:
-				if (key >= 48 && key < 58) {
+				if (key >= '0' && key <= '9') {
 					this->accumulator.push_back(key);	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
+				}
+				else if (key >= 'a' && key <= 'f' && this->isHexMode) {
+					this->accumulator.push_back(toupper(key));	//	Insert the new digit into the accumulator. Clamps the value to the nearest integer boundary if it is too large
 				}
 			}
 		}

@@ -17,8 +17,8 @@ bool Tokeniser::readToken(std::string* token) {
 
 	*token = "";
 	token->push_back(last);
-	if (last == '/' || last == '*' || last == '+' || (last == '-' && !this->was_operator_last) || last == '(' || last == ')') {
-		this->was_operator_last = (last != ')');
+	if (last == '/' || last == '*' || last == '+' || (last == '-' && !this->was_operator_last) || last == '(' || last == ')' || last == '%') {
+		this->was_operator_last = (last != ')' && last!='%');
 		return true;
 	}
 	this->was_operator_last = false;

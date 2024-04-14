@@ -13,10 +13,18 @@ double ShuntingYard::evaluateExpression(const string& expression) {
 
 	Tokeniser stream(expression);
 	string token;
+	bool wasOperatorLast = true;
 	while (stream.readToken(&token)) {
 		char last = token.at(token.length() - 1);
-		if (isdigit(last)) {
+		if (last == '%') {
+			if (values.empty() || wasOperatorLast) values.push(0.);
+			double new_val = values.top() / 100.;
+			values.pop();
+			values.push(new_val);
+			wasOperatorLast = false;
+		}else if (isdigit(last)) {
 			values.push(stod(token));
+			wasOperatorLast = false;
 		}
 		else if (isOperator(last)) {
 			char op = last;
@@ -27,6 +35,7 @@ double ShuntingYard::evaluateExpression(const string& expression) {
 				operators.pop();
 			}
 			operators.push(op);
+			wasOperatorLast = true;
 		}
 	}
 
