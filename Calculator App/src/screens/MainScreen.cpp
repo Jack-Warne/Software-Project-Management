@@ -58,7 +58,7 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		}, 50));
 
 	this->addChild(UiButton::makeButtonWithLabel("x", 200, 70, []() {
-		ofApp::mainApp->keyReleased('x');
+		ofApp::mainApp->keyReleased('*');
 		}, 50));
 
 	this->addChild(UiButton::makeButtonWithLabel("/", 265, 70, []() {
@@ -73,11 +73,15 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		ofApp::mainApp->keyReleased('.');
 		}, 50));
 
-	this->addChild(UiButton::makeButtonWithLabel("C", 200, 135, []() {
-		ofApp::mainApp->keyReleased('C');
+	this->addChild(UiButton::makeButtonWithLabel("(", 200, 135, []() {
+		ofApp::mainApp->keyReleased('(');
 		}, 50));
 
-	this->addChild(UiButton::makeButtonWithLabel("<-", 265, 135, []() {
+	this->addChild(UiButton::makeButtonWithLabel(")", 265, 135, []() {
+		ofApp::mainApp->keyReleased(')');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("<-", 265, 200, []() {
 		ofApp::mainApp->keyReleased(' ');
 		}, 50));
 
@@ -105,11 +109,11 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		ofApp::mainApp->keyReleased('f');
 		}, 50));
 
-	this->addChild(UiButton::makeButtonWithLabel("hex", 265, 200, []() {
-		ofApp::mainApp->keyReleased('hex');
+	this->addChild(UiButton::makeButtonWithLabel("hex", 265, 265, []() {
+		ofApp::mainApp->keyReleased('h');
 		}, 50));
 
-	this->addChild(UiButton::makeButtonWithLabel("=", 265, 265, []() {
+	this->addChild(UiButton::makeButtonWithLabel("=", 265, 330, []() {
 		ofApp::mainApp->keyReleased('=');
 		}, 50));
 
