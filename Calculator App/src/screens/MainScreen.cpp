@@ -113,7 +113,11 @@ MainScreen::MainScreen() : CalculatorScreen() {
 		ofApp::mainApp->keyReleased('h');
 		}, 50));
 
-	this->addChild(UiButton::makeButtonWithLabel("=", 265, 330, []() {
+	this->addChild(UiButton::makeButtonWithLabel("%", 265, 330, []() {
+		ofApp::mainApp->keyReleased('%');
+		}, 50));
+
+	this->addChild(UiButton::makeButtonWithLabel("=", 265, 395, []() {
 		ofApp::mainApp->keyReleased('=');
 		}, 50));
 
