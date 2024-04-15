@@ -106,6 +106,7 @@ void ofApp::keyReleased(int key){
 				break;
 			case 13:
 			case '=':
+				std::cout << '\a' << std::endl;
 				if (!this->isHexMode) this->accumulator = std::to_string(ShuntingYard::evaluateExpression(this->accumulator));
 				if (this->accumulator.find('.') != std::string::npos) {
 					while(this->accumulator[this->accumulator.size() - 1] == '0') this->accumulator.pop_back();
@@ -121,7 +122,6 @@ void ofApp::keyReleased(int key){
 				}
 			}
 		}
-		std::cout << '\a' << std::endl;
 		this->update_screen();	//	Update the screen once everything is done
 	}
 	catch (ErrorCode code) {
