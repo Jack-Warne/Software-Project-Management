@@ -20,7 +20,7 @@ void ofApp::setup(){
 	normal_font_path.append("assets");
 	normal_font_path.append("fonts");
 	normal_font_path.append("coolvetica.ttf");
-	std::cout << normal_font_path.string() << std::endl;
+	//std::cout << normal_font_path.string() << std::endl;
 
 	//	Load the fonts here
 	ofApp::normalFont.load(normal_font_path.string(), 25);	//	https://www.dafont.com/coolvetica.font with a size of 25 pixels
@@ -32,8 +32,8 @@ void ofApp::setup(){
 	this->accumulator = "";
 	std::cout << std::endl << std::endl;
 
-	std::string expr = "2-(.2* -   1.)/3";
-	std::cout << expr << " = " << ShuntingYard::evaluateExpression(expr) << std::endl;
+	//std::string expr = "2-(.2* -   1.)/3";
+	//std::cout << expr << " = " << ShuntingYard::evaluateExpression(expr) << std::endl;
 }
 
 //--------------------------------------------------------------

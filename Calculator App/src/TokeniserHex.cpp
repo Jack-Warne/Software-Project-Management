@@ -19,6 +19,7 @@ bool TokeniserHex::readToken(std::string* token) {
 	*token = "";
 	token->push_back(last);
 	if (last == '/' || last == '*' || last == '+' || last == '-' || last == '(' || last == ')') {
+		if (this->was_operator_last) throw ErrorCode::Parse;
 		this->was_operator_last = (last != ')' && last!='%');
 		return true;
 	}
