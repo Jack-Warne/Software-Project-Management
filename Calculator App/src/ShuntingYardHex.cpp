@@ -2,29 +2,29 @@
 #include <iostream>
 #include <sstream>
 #include <cctype>
-#include "Tokeniser.h"
+#include "TokeniserHex.h"
 #include "ErrorCodes.h"
 
 using namespace std;
 
 int ShuntingYardHex::evaluateExpression(const string& expression) {
-	stack<int> values;
+	stack<uint32_t> values;
 	stack<char> operators;
 
-	Tokeniser stream(expression);
+	TokeniserHex stream(expression);
 	string token;
 	bool wasOperatorLast = true;
 	while (stream.readToken(&token)) {
 		char last = token.at(token.length() - 1);
 		if (isHexDigit(last)) {
-			values.push(stod(token));
+			values.push(toNumber(token));
 			wasOperatorLast = false;
 		}
 		else if (isOperator(last)) {
 			char op = last;
 			while (!operators.empty() && precedence(operators.top()) >= precedence(op)) {
-				int b = values.top(); values.pop();
-				int a = values.top(); values.pop();
+				uint32_t b = values.top(); values.pop();
+				uint32_t a = values.top(); values.pop();
 				values.push(applyOperator(a, b, operators.top()));
 				operators.pop();
 			}
@@ -34,8 +34,8 @@ int ShuntingYardHex::evaluateExpression(const string& expression) {
 	}
 
 	while (!operators.empty()) {
-		int b = values.top(); values.pop();
-		int a = values.top(); values.pop();
+		uint32_t b = values.top(); values.pop();
+		uint32_t a = values.top(); values.pop();
 		values.push(applyOperator(a, b, operators.top()));
 		operators.pop();
 	}
@@ -57,10 +57,9 @@ bool ShuntingYardHex::isHexDigit(char c) {
 bool ShuntingYardHex::isOperator(char ch) {
 	return ch == '+' || ch == '-' || ch == '*' || ch == '/';
 }
-int ShuntingYardHex::toNumber(string num) {
-	int number = 0;
+uint32_t ShuntingYardHex::toNumber(string num) {
+	uint32_t number = 0;
 
-	bool isNeg = false;
 	std::stack<char> digits;
 	while (num.size() > 0) {
 		digits.push(num[num.size() - 1]);
@@ -68,22 +67,21 @@ int ShuntingYardHex::toNumber(string num) {
 	}
 
 	while (!digits.empty()) {
-		auto c = digits.top();
+		auto c = std::tolower(digits.top());
 		digits.pop();
-		if (c == '-') {
-			isNeg = !isNeg;
+		if (isdigit(c)) {
+			number = (number << 4) | (c - '0');
 		}
 		else {
-			if (isdigit(c)) {
-				num = (number << 4) | (c - '0');
-			}
-			else {
-				num = (number << 4) | (c - 'a'+10);
-			}
+			number = (number << 4) | (c - 'a'+10);
 		}
 	}
-	if (isNeg) number = -1 * number;
 	return number;
+}
+std::string ShuntingYardHex::toHex(uint32_t num) {
+	std::stringstream stream;
+	stream << std::uppercase << std::hex << num;
+	return stream.str();
 }
 
 int ShuntingYardHex::applyOperator(int a, int b, char op) {

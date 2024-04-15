@@ -18,12 +18,11 @@ bool TokeniserHex::readToken(std::string* token) {
 
 	*token = "";
 	token->push_back(last);
-	if (last == '/' || last == '*' || last == '+' || (last == '-' && !this->was_operator_last) || last == '(' || last == ')' || last == '%') {
+	if (last == '/' || last == '*' || last == '+' || last == '-' || last == '(' || last == ')') {
 		this->was_operator_last = (last != ')' && last!='%');
 		return true;
 	}
 	this->was_operator_last = false;
-	if (last == '.') *token = "0.";
 
 	while (this->head != this->text.end()) {
 		char current = *this->head;
@@ -31,13 +30,8 @@ bool TokeniserHex::readToken(std::string* token) {
 		if(current == ' ') continue;
 		
 		if (!isDigit(current)) {
-			if (current == '.') {
-				if (last == '.') throw ErrorCode::Parse;
-				if(!isDigit(last)) token->push_back('0');
-			}else{
-				this->head--;
-				break;
-			}
+			this->head--;
+			break;
 		}
 
 		token->push_back(current);
@@ -45,12 +39,11 @@ bool TokeniserHex::readToken(std::string* token) {
 	}
 
 	
-	if (token->at(token->length() - 1) == '.')token->push_back('0');
 
 	return true;
 }
 
 
 bool TokeniserHex::isDigit(char symbol) {
-	return ShuntingYardHex::isHexDigit(symbol)
+	return ShuntingYardHex::isHexDigit(symbol);
 }

@@ -3,6 +3,7 @@
 #include "screens/MainScreen.h"
 #include "mathOperations.h"
 #include "ShuntingYard.h"
+#include <ShuntingYardHex.h>
 
 
 shared_ptr<CalculatorScreen> ofApp::root;	//	Declare the constants used by the ui system
@@ -89,6 +90,7 @@ void ofApp::keyReleased(int key){
 					std::cout << "Hex Mode is off" << std::endl;
 				}
 				break;
+			case '%':
 			case '.':
 				if (!this->isHexMode) {
 					this->accumulator.push_back(key);
@@ -99,7 +101,6 @@ void ofApp::keyReleased(int key){
 			case '-':
 			case '/':
 			case '*':
-			case '%':
 			case '(':
 			case ')':
 				this->accumulator.push_back(key);
@@ -107,7 +108,12 @@ void ofApp::keyReleased(int key){
 			case 13:
 			case '=':
 				std::cout << '\a' << std::endl;
-				if (!this->isHexMode) this->accumulator = std::to_string(ShuntingYard::evaluateExpression(this->accumulator));
+				if (!this->isHexMode) {
+					this->accumulator = std::to_string(ShuntingYard::evaluateExpression(this->accumulator));
+				}
+				else {
+					this->accumulator = ShuntingYardHex::toHex(ShuntingYardHex::evaluateExpression(this->accumulator));
+				}
 				if (this->accumulator.find('.') != std::string::npos) {
 					while(this->accumulator[this->accumulator.size() - 1] == '0') this->accumulator.pop_back();
 				}
