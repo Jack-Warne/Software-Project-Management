@@ -121,6 +121,7 @@ void ofApp::keyReleased(int key){
 				}
 			}
 		}
+		std::cout << '\a' << std::endl;
 		this->update_screen();	//	Update the screen once everything is done
 	}
 	catch (ErrorCode code) {
